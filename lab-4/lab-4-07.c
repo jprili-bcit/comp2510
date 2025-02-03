@@ -13,7 +13,7 @@ int max_abs(int arr[], size_t length) {
     for (size_t i = 0; i < length; ++i) {
         int abs_element = arr[i] > 0 ? arr[i] : -arr[i];
         if (abs_element > max_so_far) {
-            max_so_far = arr[i] > 0 ? arr[i] : -arr[i];
+            max_so_far = abs_element;
         }
     }
     return max_so_far;
