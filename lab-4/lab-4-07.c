@@ -15,7 +15,7 @@ int max_abs(int arr[], size_t length) {
         int element_sq = arr[i] * arr[i];
         if (element_sq > max_so_far) {
             max_so_far = element_sq;
-            max_element = arr[i];
+            max_element = arr[i] > 0 ? arr[i] : -arr[i];
         }
     }
     return max_element;
