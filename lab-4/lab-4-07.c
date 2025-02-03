@@ -9,16 +9,14 @@
 #define SIZE_2 3
 
 int max_abs(int arr[], size_t length) {
-    int max_so_far = 0;
-    int max_element = 0;
+    int max_so_far = -1;
     for (size_t i = 0; i < length; ++i) {
-        int element_sq = arr[i] * arr[i];
-        if (element_sq > max_so_far) {
-            max_so_far = element_sq;
-            max_element = arr[i] > 0 ? arr[i] : -arr[i];
+        int abs_element = arr[i] > 0 ? arr[i] : -arr[i];
+        if (abs_element > max_so_far) {
+            max_so_far = arr[i] > 0 ? arr[i] : -arr[i];
         }
     }
-    return max_element;
+    return max_so_far;
 }
 
 int main(void) {
