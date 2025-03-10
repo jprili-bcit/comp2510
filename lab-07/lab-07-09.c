@@ -8,10 +8,8 @@ int compare_custom(const void* a, const void* b) {
     size_t _a_len = strlen(_a);
     size_t _b_len = strlen(_b);
 
-    if (_a_len > _b_len) {
-        return -1;
-    } else if (_a_len < _b_len) {
-        return 1;
+    if (_a_len != _b_len) {
+        return _a_len - _b_len;
     } else {
         return strcmp(_a, _b);
     }
