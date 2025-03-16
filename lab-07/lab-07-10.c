@@ -8,14 +8,24 @@ int compare(const void* a, const void* b) {
 // inclusive
 void sort_subarray(int ints[], size_t start, 
         size_t end, size_t size) {
+    if (end >= size) {
+        printf("WARNING: end index too large. \n");
+        end = size - 1;
+    } 
+
+    if (start >= size) {
+        printf("WARNING: start index is too small or too large. \n");
+        start = 0;
+    }
+
+    // swap
     if (start > end) {
         size_t hold = start;
         start = end;
         end = hold;
     }
-    if (end >= size) {
-        end = size - 1;
-    } 
+
+
     printf("%lu, %lu\n", start, end);
     qsort(ints + start, end - start + 1,
             sizeof(int), compare);
